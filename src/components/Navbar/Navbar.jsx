@@ -5,7 +5,7 @@ import { ShoppingCart } from "@material-ui/icons";
 import logo from '../../assets/codeLogo.png';
 import useStyles from './styles'
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
     const classes = useStyles();
     return(
         <>
@@ -13,12 +13,12 @@ const Navbar = () => {
                 <Toolbar>
                     <Typography variant='h6' className={classes.title} color='inherit'>
                         <img src={logo} alt='jpCommerce.js' height='25px' className={classes.image} />
-                        JP Commerce.js
+                        JP's Mock Guitar Shop
                     </Typography>
                     <div className={classes.grow}/>
                     <div>
                         <IconButton aria-label='Show cart items' color='inherit'>
-                            <Badge badgeContent={2} color='secondary'>
+                            <Badge badgeContent={totalItems} color='secondary'>
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>
